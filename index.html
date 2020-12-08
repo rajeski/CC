@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <div class="container">
     <div  class="header">
-        <h1>Currency Converter</h1>
+    <h1>Currency Converter</h1>
     </div>
     <div class="date">2020-12-8</div>
-    <ul class="currencies"></ul>
-    <li class="currency" id="USD">
-        <img src="http://www.geonames.org/flags/1/us.gif" class="flag">
+    <ul class="currencies">
+    <li class="currency base-currency" id="USD">
+        <img src="http://www.geonames.org/flags/l/us.gif" class="flag">
         <div class="info">
-            <p class="input"
+            <p class="input"><span class=currency-symbol>&#36;</span><input placeholder="0.0000"></p>
+            <p class="currency-name">USD - US Dollar</p>
+            <p class="base-currency-rate">1 USD = 1 USD</p>
         </div>
+        <span class="close">&times;</span>
     </li>
+    <li class="currency" id="JPY">
+        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
+        <div class="info">
+            <p class="input"><span class=currency-symbol>&#165;</span><input placeholder="0.0000"></p>
+            <p class="currency-name">JPY - Japanese Yen</p>
+            <p class="base-currency-rate">1 USD = 111.0401 JPY</p>
+        </div>
+        <span class="close">&times;</span>
+    </li>
+</ul>
     <ul class="add-currency-list"></ul>
     <button class="add-currency-btn">Add Currency</button>
     </div>
 
-    
     <script src="main.js"></script>
 </body>
 </html>
 
-https://www.youtube.com/watch?v=ARBvYDNeNdM&ab_channel=CodingJourney
+<!-- https://www.youtube.com/watch?v=ARBvYDNeNdM&ab_channel=CodingJourney --> 

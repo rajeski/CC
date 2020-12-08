@@ -33,6 +33,64 @@ body {
  ul.currencies {
      height: 500px;
      background-color: #222;
+     padding: 0 1.5rem 1rem 1.5rem;
+ }
+ ul.currencies li {
+    background-color: #2d2d37;
+    border-radius: 5px;
+    list-style: none;
+    padding: 1rem 1rem 0.75rem 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+ }
+ ul.currencies li:last-child {
+     margin-bottom: 0;
+ }
+ ul.currencies li.base-currency {
+     background-color: #4389cf;
+ }
+ .flag {
+     width: 60px;
+     height: 40px;
+     border: 1px solid #fff;
+     vertical-align: top;
+ }
+ .info {
+     display: inline-block;
+     width: 78%
+ }
+ .info .input span {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 4rem;
+    text-align: center;
+ }
+ .info .input input {
+     font-size: 1.5rem;
+     width: 78%;
+     background-color: transparent;
+     border: 2px solid #fff;
+     border-radius: 5px;
+     color: #fff;
+     padding: 0.3rem;
+     margin-bottom: 0.75rem;
+ }
+ .info .currency-name {
+     font-size: 1rem;
+     font-weight: bold;
+     margin-bottom: 0.5rem;
+     margin-left: 4rem;
+ }
+ .info .base-currency-rate {
+     font-size: 0.8rem;
+     margin-left: 4rem;
+ }
+ ul.currencies li .close {
+     position: absolute;
+     top: 0;
+     right: 0;
+     padding: 0 0.5rem;
+     font-size: 1.5rem;
  }
  .add-currency-btn {
      background-color: #00b386;
