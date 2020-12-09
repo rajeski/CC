@@ -24,16 +24,17 @@ body {
  .header h1 {
      font-size: 2.25rem;
  }
- .date {
+ .note {
      background-color: #222;
      text-align: right;
      font-size: 0.75rem;
      padding: 0.75 rem 2rem 0.75rem 0;
  }
  ul.currencies {
-     height: 500px;
+     height: calc(100vh - 40px - 100px - 40px - 58px);
      background-color: #222;
      padding: 0 1.5rem 1rem 1.5rem;
+     overflow-y: auto;
  }
  ul.currencies li {
     background-color: #2d2d37;
@@ -91,6 +92,11 @@ body {
      right: 0;
      padding: 0 0.5rem;
      font-size: 1.5rem;
+     color: #666; 
+     cursor: pointer;
+ }
+ ul.currencies li .close:hover {
+     color: #fff;
  }
  .add-currency-btn {
      background-color: #00b386;

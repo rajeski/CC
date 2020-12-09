@@ -12,7 +12,7 @@
     <div  class="header">
     <h1>Currency Converter</h1>
     </div>
-    <div class="date">2020-12-8</div>
+    <div class="note">Bon Voyage!</div>
     <ul class="currencies">
     <li class="currency base-currency" id="USD">
         <img src="http://www.geonames.org/flags/l/us.gif" class="flag">
@@ -28,7 +28,25 @@
         <div class="info">
             <p class="input"><span class=currency-symbol>&#165;</span><input placeholder="0.0000"></p>
             <p class="currency-name">JPY - Japanese Yen</p>
-            <p class="base-currency-rate">1 USD = 111.0401 JPY</p>
+            <p class="base-currency-rate">1 USD = 104.12 JPY</p>
+        </div>
+        <span class="close">&times;</span>
+    </li>
+    <li class="currency" id="GBP">
+        <img src="http://www.geonames.org/flags/l/uk.gif" class="flag">
+        <div class="info">
+            <p class="input"><span class=currency-symbol>&#163;</span><input placeholder="0.0000"></p>
+            <p class="currency-name">GBP - British Pound</p>
+            <p class="base-currency-rate">1 USD = 0.74 GBP</p>
+        </div>
+        <span class="close">&times;</span>
+    </li>
+    <li class="currency" id="Euro">
+        <img src="https://www.nationsonline.org/flags/europe_flag.gif" class="flag">
+        <div class="info">
+            <p class="input"><span class=currency-symbol>&#128;</span><input placeholder="0.0000"></p>
+            <p class="currency-name">EU - Euro</p>
+            <p class="base-currency-rate">1 USD = 0.83 Euros </p>
         </div>
         <span class="close">&times;</span>
     </li>
@@ -36,7 +54,10 @@
     <ul class="add-currency-list"></ul>
     <button class="add-currency-btn">Add Currency</button>
     </div>
-
+    <p id="date"></p>
+    <script>
+    document.getElementById("date").innerHTML = Date();
+    </script>
     <script src="main.js"></script>
 </body>
 </html>
