@@ -98,6 +98,16 @@ body {
  ul.currencies li .close:hover {
      color: #fff;
  }
+
+ /* Scrollbar */
+ ul.currencies::-webkit-scrollbar {
+     width: 5px;
+ }
+ ul.currencies::-webkit-scrollbar-thumb {
+    background-color: #2d2d37;
+    border-bottom: 1rem solid #222;
+ }
+
  .add-currency-btn {
      background-color: #00b386;
      color: #fff;
