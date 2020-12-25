@@ -15,6 +15,7 @@ body {
  .container {
      width: 500px;
      margin: 20px auto;
+     position: relative;
  }
  .header {
      background: #2d2d37;
@@ -107,6 +108,32 @@ body {
     background-color: #2d2d37;
     border-bottom: 1rem solid #222;
  }
+
+ul.add-currency-btn {
+    position: absolute;
+    bottom: 54px;
+    left: 0;
+    background-color: #f1f1f1;
+    color: #333;
+    width: 100%;
+    height: calc(100vh - 40px - 100px - 55px);
+    overflow-y: auto;
+}
+
+ul.add-currency-list {
+    list-style: none;
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+ul.add-currency-list li .flag {
+    width: 3rem; 
+    height: 2rem;
+    vertical-align: middle;
+}
+ul.add-currency-list li span {
+    margin-left: 1rem;
+    font-weight: bold;
+}
 
  .add-currency-btn {
      background-color: #00b386;
