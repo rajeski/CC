@@ -157,3 +157,4 @@ ul.add-currency-list li span {
 .add-currency-btn:hover + ul.add-currency-list {
     height: calc(100vh - 40px - 100px 55px);
 }
+/* Recheck this section for errors */
