@@ -56,4 +56,10 @@ function addCurrencyBtnClick(event) {
     addCurrencyBtn.classList.toggle("open");
 }
 
-// Auxillary  
+// Auxillary Functions
+
+function populateaddCurrencyList() {
+  for(let i=0; i<currencies.length; i++) {
+    addCurrencyList.insertAdjacentHTML()
+  }
+}
