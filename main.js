@@ -62,6 +62,8 @@ function populateaddCurrencyList() {
   for(let i=0; i<currencies.length; i++) {
     addCurrencyList.insertAdjacentHTML("beforeend", 
     `<li data-currency="NZD">
-    <img src="http://www.geonames.org/flags/l/nz.gif" class="flag"><span>NZD - New Zealand Dollar</span></li>`);
+    <img src="http://www.geonames.org/flags/l/nz.gif" class="flag"><span>NZD - New Zealand Dollar</span>
+    </li>`
+    );
   }
 }
