@@ -61,8 +61,8 @@ function addCurrencyBtnClick(event) {
 function populateaddCurrencyList() {
   for(let i=0; i<currencies.length; i++) {
     addCurrencyList.insertAdjacentHTML("beforeend", 
-    `<li data-currency="NZD">
-    <img src="http://www.geonames.org/flags/l/nz.gif" class="flag"><span>NZD - New Zealand Dollar</span>
+    `<li data-currency=${currencies[i].abbreviation}>
+    <img src=${currencies[i].flagURL} class="flag"${currencies[i].abbreviation} -${currencies[i].name}</span>
     </li>`
     );
   }
