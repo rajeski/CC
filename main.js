@@ -4,7 +4,7 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
-const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "Yen"];
+const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY"];
 
 const currencies = [ 
     {
@@ -69,4 +69,8 @@ function populateaddCurrencyList() {
     </li>`
     );
   }
+}
+
+function populateaddCurrencyList() {
+  for(let i=0; i<initiallyDisplayedCurrencies.length; i)
 }
