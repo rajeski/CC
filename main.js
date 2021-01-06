@@ -72,5 +72,15 @@ function populateaddCurrencyList() {
 }
 
 function populateaddCurrencyList() {
-  for(let i=0; i<initiallyDisplayedCurrencies.length; i)
+  for(let i=0; i<initiallyDisplayedCurrencies.length; i++) {
+    const currency = currencies.find(c => c.abbreviation===initiallyDisplayedCurrencies[i]);
+    if(currency) newCurrenciesListItem(currency);
+
+  }
 }
+
+function newCurrenciesListItem(currency) {
+  
+}
+
+populateaddCurrencyList();
