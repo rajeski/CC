@@ -82,7 +82,10 @@ function populateaddCurrencyList() {
 }
 
 function newCurrenciesListItem(currency) {
-  
+  if(currenciesList.childElementCount===0) {
+    baseCurrency = currency.abbreviation;
+    baseCurrencyAmount = 0;
+  }
 }
 
 populateaddCurrencyList();
