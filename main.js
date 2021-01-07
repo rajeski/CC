@@ -86,6 +86,7 @@ function newCurrenciesListItem(currency) {
     baseCurrency = currency.abbreviation;
     baseCurrencyAmount = 0;
   }
+  addCurrencyList.querySelector(`[]`)
 }
 
 populateaddCurrencyList();
