@@ -90,3 +90,5 @@ function newCurrenciesListItem(currency) {
 }
 
 populateaddCurrencyList();
+
+// Review this section
