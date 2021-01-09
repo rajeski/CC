@@ -86,7 +86,7 @@ function newCurrenciesListItem(currency) {
     baseCurrency = currency.abbreviation;
     baseCurrencyAmount = 0;
   }
-  addCurrencyList.querySelector(`[]`)
+  addCurrencyList.querySelector(`[data-currency=${currency.abbreviation}]`).classList.add("disabled");
 }
 
 populateaddCurrencyList();
