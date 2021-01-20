@@ -91,3 +91,5 @@ function newCurrenciesListItem(currency) {
 }
 
 populateaddCurrencyList();
+
+/* Add currency API */ 
