@@ -8,6 +8,8 @@ const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY"];
 let baseCurrency;
 let baseCurrencyAmount;
 
+/* Reconsider which currencies to include... */ 
+
 let currencies = [
   {
     name: "US Dollar",
