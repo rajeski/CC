@@ -250,6 +250,7 @@ function newCurrenciesListItem(currency) {
 
   currenciesList.insertAdjacentHTML (
     "beforeend",
+    /* Complete this section */
   )
 }
 
