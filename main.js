@@ -256,8 +256,6 @@ function newCurrenciesListItem(currency) {
 
 populateaddCurrencyList();
 
-/* Code this section's functionality */
-
 /* Placeholder GET https://api.exchangeratesapi.io/latest HTTP/1.1
 
 {
