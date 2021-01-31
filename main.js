@@ -270,4 +270,4 @@ populateaddCurrencyList();
     "USD": 1.2234,
     ...
   }
-} */ 
+} Wondering if more base-currencies should be added here? */ 
