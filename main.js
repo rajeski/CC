@@ -250,8 +250,16 @@ function newCurrenciesListItem(currency) {
 
   currenciesList.insertAdjacentHTML (
     "beforeend",
-    /* Complete this section */
-  )
+    `<li class="currency" id="JPY">
+    <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
+    <div class="info">
+      <p class="input"><span class=currency-symbol>&#165;</span><input placeholder="0.0000"></p>
+      <p class="currency-name">JPY - Japanese Yen</p>
+      <p class="base-currency-rate">1 USD = 104.12 JPY</p>
+    </div>
+    <span class="close">&times;</span>
+</li>`
+  );
 }
 
 populateaddCurrencyList();
