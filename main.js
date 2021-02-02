@@ -259,6 +259,8 @@ function newCurrenciesListItem(currency) {
     </div>
     <span class="close">&times;</span>
 </li>`
+
+/* Complete the above section */ 
   );
 }
 
