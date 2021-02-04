@@ -250,7 +250,7 @@ function newCurrenciesListItem(currency) {
 
   currenciesList.insertAdjacentHTML (
     "beforeend",
-    `<li class="currency" id="JPY">
+    `<li class="currency ${currency.abbreviation===baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
     <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
     <div class="info">
       <p class="input"><span class=currency-symbol>&#165;</span><input placeholder="0.0000"></p>
@@ -259,7 +259,7 @@ function newCurrenciesListItem(currency) {
     </div>
     <span class="close">&times;</span>
 </li>`
-/* Complete the above section */ 
+/* Still working on this section */ 
   );
 }
 
