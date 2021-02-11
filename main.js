@@ -254,7 +254,7 @@ function newCurrenciesListItem(currency) {
     `<li class="currency ${currency.abbreviation===baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
     <img src=${currency.flagURL}class="flag">
     <div class="info">
-      <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000"></p>
+      <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
       <p class="currency-name">JPY - Japanese Yen</p>
       <p class="base-currency-rate">1 USD = 104.12 JPY</p>
     </div>
