@@ -256,7 +256,7 @@ function newCurrenciesListItem(currency) {
     <div class="info">
       <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
       <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
-      <p class="base-currency-rate">1 ${baseCurrency} ${currency.abbreviation}</p>
+      <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation}</p>
     </div>
     <span class="close">&times;</span>
 </li>`
