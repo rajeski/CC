@@ -4,7 +4,7 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
-const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY"];
+const initiallyDisplayedCurrencies = ["AUD", "EUR", "GBP", "JPY"];
 let baseCurrency;
 let baseCurrencyAmount;
 
