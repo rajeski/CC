@@ -4,7 +4,7 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
-const initiallyDisplayedCurrencies = ["AUD", "EUR", "GBP", "JPY"];
+const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY"];
 let baseCurrency;
 let baseCurrencyAmount;
 
@@ -218,6 +218,8 @@ addCurrencyBtn.addEventListener("click", addCurrencyBtnClick);
 function addCurrencyBtnClick(event) {
     addCurrencyBtn.classList.toggle("open");
 }
+
+addCurrencyList.addEventListener()
 
 // Auxillary Functions
 
