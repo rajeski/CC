@@ -219,7 +219,9 @@ function addCurrencyBtnClick(event) {
     addCurrencyBtn.classList.toggle("open");
 }
 
-addCurrencyList.addEventListener()
+addCurrencyList.addEventListener("click", addCurrencyListClick); 
+
+
 
 // Auxillary Functions
 
