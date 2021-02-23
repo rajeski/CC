@@ -227,6 +227,10 @@ function addCurrencyBtnClick(event) {
 
 addCurrencyList.addEventListener("click", addCurrencyListClick);
 
+function addCurrencyListClick(event) {
+  
+}
+
 // Auxillary Functions
 
 function populateaddCurrencyList() {
