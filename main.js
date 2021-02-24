@@ -229,6 +229,9 @@ addCurrencyList.addEventListener("click", addCurrencyListClick);
 
 function addCurrencyListClick(event) {
   const clickedListItem = event.target.closest("li");
+  if(clickedListItem.classList.contains("disabled")) {
+    const newCurrency = currencies.find()
+  }
 }
 
 // Auxillary Functions
