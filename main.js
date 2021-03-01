@@ -237,6 +237,9 @@ function addCurrencyListClick(event) {
 
 currenciesList.addEventListener("click", currrenciesListClick);
 
+function currrenciesListClick(event) {
+  
+}
 
 // Auxillary Functions
 
