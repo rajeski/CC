@@ -238,7 +238,7 @@ function addCurrencyListClick(event) {
 currenciesList.addEventListener("click", currrenciesListClick);
 
 function currrenciesListClick(event) {
-  
+  const clickedListItem = event.target.closest("li");
 }
 
 // Auxillary Functions
