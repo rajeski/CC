@@ -239,8 +239,7 @@ currenciesList.addEventListener("click", currrenciesListClick);
 
 function currrenciesListClick(event) {
   const clickedListItem = event.target.closest("li");
-  if(clickedListItem.classList.contains("disabled")) {
-    // Finish the section 
+  if(!clickedListItem.classList.contains("disabled")) {
   }
 }
 
