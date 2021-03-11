@@ -244,6 +244,8 @@ function currrenciesListClick(event) {
   }
 }
 
+// Recheck this above two functions
+
 // Auxillary Functions
 
 function populateaddCurrencyList() {
