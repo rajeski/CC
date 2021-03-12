@@ -244,7 +244,7 @@ function currrenciesListClick(event) {
   }
 }
 
-// Recheck this above two functions
+// Recheck the above two functions 
 
 // Auxillary Functions
 
