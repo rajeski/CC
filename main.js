@@ -238,13 +238,13 @@ function addCurrencyListClick(event) {
 currenciesList.addEventListener("click", currrenciesListClick);
 
 function currrenciesListClick(event) {
-  const clickedListItem = event.target.closest("li");
-  if(!clickedListItem.classList.contains("disabled")) {
-    const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
+  if(event.target.classList.contains("close")) {
+    const 
+  // const clickedListItem = event.target.closest("li");
+  // if(!clickedListItem.classList.contains("disabled")) {
+  //   const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
   }
 }
-
-// Recheck the above two functions 
 
 // Auxillary Functions
 
