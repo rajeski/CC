@@ -245,7 +245,6 @@ function currrenciesListClick(event) {
   //   const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
   }
 }
-// Recheck the section above
 
 // Auxillary Functions
 
