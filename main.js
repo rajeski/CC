@@ -1,3 +1,5 @@
+// Happy St. Patrick's Day!
+
 // Global Variables 
 
 const addCurrencyBtn = document.querySelector(".add-currency-btn");
