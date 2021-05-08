@@ -241,6 +241,7 @@ function currrenciesListClick(event) {
   if(event.target.classList.contains("close")) {
     const parentNode = event.target.parentNode;
     parentNode.remove();
+    addCurrencyList.querySelector();
   // const clickedListItem = event.target.closest("li");
   // if(!clickedListItem.classList.contains("disabled")) {
   //   const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
@@ -249,7 +250,7 @@ function currrenciesListClick(event) {
 
 // Auxillary Functions
 
-function populateaddCurrencyList() {
+function populateAddCurrencyList() {
   for(let i=0; i<currencies.length; i++) {
     addCurrencyList.insertAdjacentHTML("beforeend", 
     `<li data-currency=${currencies[i].abbreviation}>
