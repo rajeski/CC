@@ -239,7 +239,8 @@ currenciesList.addEventListener("click", currrenciesListClick);
 
 function currrenciesListClick(event) {
   if(event.target.classList.contains("close")) {
-    const 
+    const parentNode = event.target.parentNode;
+    parentNode.remove();
   // const clickedListItem = event.target.closest("li");
   // if(!clickedListItem.classList.contains("disabled")) {
   //   const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
