@@ -251,6 +251,11 @@ function currrenciesListClick(event) {
   }
 }
 
+function setNewBaseCurrency(setNewBaseCurrency) {
+  newBaseCurrencyLI.classList.add("base-currency");
+  baseCurrency = newBaseCurrencyLI.id;
+}
+
 // Auxillary Functions
 
 function populateAddCurrencyList() {
