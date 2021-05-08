@@ -256,7 +256,8 @@ function setNewBaseCurrency(setNewBaseCurrency) {
   baseCurrency = newBaseCurrencyLI.id;
   const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
   currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
-    
+    const currencyRate = currencies.find(currency => currency.abbreviation===currencyLI.id).rate;
+    const exchangeRate = currencyLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
   })
 }
 
