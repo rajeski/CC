@@ -254,6 +254,10 @@ function currrenciesListClick(event) {
 function setNewBaseCurrency(setNewBaseCurrency) {
   newBaseCurrencyLI.classList.add("base-currency");
   baseCurrency = newBaseCurrencyLI.id;
+  const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
+  currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
+    
+  })
 }
 
 // Auxillary Functions
