@@ -4,7 +4,7 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
-// Research Alternative Exchange-rate APIs 
+// Research Alternative Exchange-rate APIs (All require signing-up...)
 
 const dataURL = "https://api.exchangeratesapi.io/latest";
 
