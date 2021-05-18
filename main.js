@@ -309,7 +309,7 @@ function newCurrenciesListItem(currency) {
   );
 }
 
-populateaddCurrencyList();
+populateaddCurrencyList(); /* Confirm if this is duplicate code */ 
 
 populateCurrenciesList();
 
