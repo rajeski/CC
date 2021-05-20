@@ -327,4 +327,6 @@ populateCurrenciesList();
     "USD": 1.2234,
     ...
   }
-} Wondering if more base-currencies should be added here? */ 
+} Wondering if more base-currencies should be added here? */
+
+/* Need to refactor these files */ 
