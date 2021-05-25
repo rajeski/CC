@@ -1,70 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Currency Converter</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp95+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-    <div  class="header">
-    <h1>Currency Converter</h1>
+<!-- Refactored Code -->
+<div class="container">
+    <div class="header">
+      <h1>Currency Converter</h1>
     </div>
-    <div class="note">Bon Voyage!</div>
-    <ul class="currencies">
-    <li class="currency base-currency" id="USD">
-        <img src="http://www.geonames.org/flags/l/us.gif" class="flag">
-        <div class="info">
-            <p class="input"><span class=currency-symbol>&#36;</span><input placeholder="0.0000"></p>
-            <p class="currency-name">USD - US Dollar</p>
-            <p class="base-currency-rate">1 USD = 1 USD</p>
-        </div>
-        <span class="close">&times;</span>
-    </li>
-    <li class="currency" id="JPY">
-        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
-        <div class="info">
-            <p class="input"><span class=currency-symbol>&#165;</span><input placeholder="0.0000"></p>
-            <p class="currency-name">JPY - Japanese Yen</p>
-            <p class="base-currency-rate">1 USD = 104.12 JPY</p>
-        </div>
-        <span class="close">&times;</span>
-    </li>
-    <li class="currency" id="GBP">
-        <img src="http://www.geonames.org/flags/l/uk.gif" class="flag">
-        <div class="info">
-            <p class="input"><span class=currency-symbol>&#163;</span><input placeholder="0.0000"></p>
-            <p class="currency-name">GBP - British Pound</p>
-            <p class="base-currency-rate">1 USD = 0.74 GBP</p>
-        </div>
-        <span class="close">&times;</span>
-    </li>
-    <li class="currency" id="Euro">
-        <img src="https://www.nationsonline.org/flags/europe_flag.gif" class="flag">
-        <div class="info">
-            <p class="input"><span class=currency-symbol>&#128;</span><input placeholder="0.0000"></p>
-            <p class="currency-name">EU - Euro</p>
-            <p class="base-currency-rate">1 USD = 0.83 Euros </p>
-        </div>
-        <span class="close">&times;</span>
-    </li>
-</ul>
-<button class="add-currency-btn"><i class=" fas fa long-arrow-alt-left"></i>Add Currency</button>
-<ul class="add-currency-list">
-    <!-- Recheck this section -->
-    <!-- <li data-currency="USD" class="disabled"><img src="http://www.geonames.org/flags/l/us.gif" class="flag"><span>USD - US Dollar</span></li>
-    <li data-currency="CAD"><img src="http://www.geonames.org/flags/l/ca.gif" class="flag"><span>CAD - Canadian Dollar</span></li>
-    <li data-currency="NZD"><img src="http://www.geonames.org/flags/l/nz.gif" class="flag"><span>NZD - New Zealand Dollar</span></li>
-    <li data-currency="MXN"><img src="http://www.geonames.org/flags/l/mx.gif" class="flag"><span>MXN - Mexican Peso</span></li> -->
-</ul>
-    </div>
-    <!-- <ul class="add-currency-list"></ul>
-    <button class="add-currency-btn">Add Currency</button> -->
-    </div>
-    <p id="date"></p>
-    <script src="main.js"></script>
-</body>
-</html>
+    <div class="date"></div>
+    <ul class="currencies"></ul>
+    <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
+    <ul class="add-currency-list"></ul>
+  </div>
