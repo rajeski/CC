@@ -1,18 +1,14 @@
-// Global Variables 
+// Global Variables
 
 const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
-// Research Alternative Exchange-rate APIs (All require signing-up...)
-
 const dataURL = "https://api.exchangeratesapi.io/latest";
 
-const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY"];
+const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY", "RUB"];
 let baseCurrency;
 let baseCurrencyAmount;
-
-/* Extensive currency-convertion options */ 
 
 let currencies = [
   {
@@ -220,12 +216,6 @@ let currencies = [
 addCurrencyBtn.addEventListener("click", addCurrencyBtnClick);
 
 function addCurrencyBtnClick(event) {
-    addCurrencyBtn.classList.toggle("open");
-}
-
-addCurrencyList.addEventListener("click", addCurrencyListClick); 
-
-function addCurrencyBtnClick(event) {
   addCurrencyBtn.classList.toggle("open");
 }
 
@@ -233,20 +223,21 @@ addCurrencyList.addEventListener("click", addCurrencyListClick);
 
 function addCurrencyListClick(event) {
   const clickedListItem = event.target.closest("li");
-  if(clickedListItem.classList.contains("disabled")) {
+  if(!clickedListItem.classList.contains("disabled")) {
     const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
     if(newCurrency) newCurrenciesListItem(newCurrency);
   }
 }
 
-currenciesList.addEventListener("click", currrenciesListClick);
+currenciesList.addEventListener("click", currenciesListClick);
 
-function currrenciesListClick(event) {
+function currenciesListClick(event) {
   if(event.target.classList.contains("close")) {
     const parentNode = event.target.parentNode;
     parentNode.remove();
     addCurrencyList.querySelector(`[data-currency=${parentNode.id}]`).classList.remove("disabled");
     if(parentNode.classList.contains("base-currency")) {
+      const newBaseCurrencyLI = currenciesList.querySelector(".currency");
       if(newBaseCurrencyLI) {
         setNewBaseCurrency(newBaseCurrencyLI);
         baseCurrencyAmount = Number(newBaseCurrencyLI.querySelector(".input input").value);
@@ -255,32 +246,70 @@ function currrenciesListClick(event) {
   }
 }
 
-function setNewBaseCurrency(setNewBaseCurrency) {
+function setNewBaseCurrency(newBaseCurrencyLI) {
   newBaseCurrencyLI.classList.add("base-currency");
   baseCurrency = newBaseCurrencyLI.id;
   const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
   currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
     const currencyRate = currencies.find(currency => currency.abbreviation===currencyLI.id).rate;
     const exchangeRate = currencyLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
-  })
+    currencyLI.querySelector(".base-currency-rate").textContent = `1 ${baseCurrency} = ${exchangeRate} ${currencyLI.id}`;
+  });
 }
 
-// Auxillary Functions
+currenciesList.addEventListener("input", currenciesListInputChange);
 
-function populateAddCurrencyList() {
+function currenciesListInputChange(event) {
+  const isNewBaseCurrency = event.target.closest("li").id!==baseCurrency;
+  if(isNewBaseCurrency) {
+    currenciesList.querySelector(`#${baseCurrency}`).classList.remove("base-currency");
+    setNewBaseCurrency(event.target.closest("li"));
+  }
+  const newBaseCurrencyAmount = isNaN(event.target.value) ? 0 : Number(event.target.value);
+  if(baseCurrencyAmount!==newBaseCurrencyAmount || isNewBaseCurrency) {
+    baseCurrencyAmount = newBaseCurrencyAmount;
+    const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
+    currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
+      if(currencyLI.id!==baseCurrency) {
+        const currencyRate = currencies.find(currency => currency.abbreviation===currencyLI.id).rate;
+        const exchangeRate = currencyLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
+        currencyLI.querySelector(".input input").value = exchangeRate*baseCurrencyAmount!==0 ? (exchangeRate*baseCurrencyAmount).toFixed(4) : "";
+      }
+    });
+  }
+}
+
+currenciesList.addEventListener("focusout", currenciesListFocusOut);
+
+function currenciesListFocusOut(event) {
+  const inputValue = event.target.value;
+  if(isNaN(inputValue) || Number(inputValue)===0) event.target.value="";
+  else event.target.value = Number(inputValue).toFixed(4);
+}
+
+currenciesList.addEventListener("keydown", currenciesListKeyDown);
+
+function currenciesListKeyDown(event) {
+  if(event.key==="Enter") event.target.blur();
+}
+
+// Auxiliary Functions
+
+function populateAddCyrrencyList() {
   for(let i=0; i<currencies.length; i++) {
-    addCurrencyList.insertAdjacentHTML("beforeend", 
-    `<li data-currency=${currencies[i].abbreviation}>
-    <img src=${currencies[i].flagURL} class="flag"${currencies[i].abbreviation} - ${currencies[i].name}</span>
-    </li>`
+    addCurrencyList.insertAdjacentHTML(
+      "beforeend", 
+      `<li data-currency=${currencies[i].abbreviation}>
+        <img src=${currencies[i].flagURL} class="flag"><span>${currencies[i].abbreviation} - ${currencies[i].name}</span>
+      </li>`
     );
   }
 }
 
-function populateaddCurrencyList() {
+function populateCurrenciesList() {
   for(let i=0; i<initiallyDisplayedCurrencies.length; i++) {
     const currency = currencies.find(c => c.abbreviation===initiallyDisplayedCurrencies[i]);
-    if(currency) newCurrenciesListItem(currency); 
+    if(currency) newCurrenciesListItem(currency);
   }
 }
 
@@ -291,42 +320,31 @@ function newCurrenciesListItem(currency) {
   }
   addCurrencyList.querySelector(`[data-currency=${currency.abbreviation}]`).classList.add("disabled");
   const baseCurrencyRate = currencies.find(c => c.abbreviation===baseCurrency).rate;
-  const exchangeRate = currency.abbreviation===baseCurrency ? 1 : (currency.rate/baseCurrencyRate).tofixed(4);
+  const exchangeRate = currency.abbreviation===baseCurrency ? 1 : (currency.rate/baseCurrencyRate).toFixed(4);
   const inputValue = baseCurrencyAmount ? (baseCurrencyAmount*exchangeRate).toFixed(4) : "";
 
-  currenciesList.insertAdjacentHTML (
+  currenciesList.insertAdjacentHTML(
     "beforeend",
     `<li class="currency ${currency.abbreviation===baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
-    <img src=${currency.flagURL}class="flag">
-    <div class="info">
-      <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
-      <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
-      <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation}</p>
-    </div>
-    <span class="close">&times;</span>
-</li>`
-/* Need to complete this section */ 
+      <img src=${currency.flagURL} class="flag">
+      <div class="info">
+        <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
+        <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
+        <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation}</p>
+      </div>
+      <span class="close">&times;</span>
+    </li>`
   );
 }
 
-populateaddCurrencyList(); /* Confirm if this is duplicate code */ 
-
-populateCurrenciesList();
-
-/* Placeholder GET https://api.exchangeratesapi.io/latest HTTP/1.1
-
-{
-  "base": "USD",
-  "date": "01-22-2021",
-  "rates": {
-    "CAD": 1.565,
-    "CHF": 1.1798,
-    "GBP": 0.87295,
-    "SEK": 10.2983,
-    "EUR": 1.092,
-    "USD": 1.2234,
-    ...
-  }
-} Wondering if more base-currencies should be added here? */
-
-/* Need to refactor these files */ 
+fetch(dataURL)
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector(".date").textContent = data.date;
+    data.rates["EUR"] = 1;
+    currencies = currencies.filter(currency => data.rates[currency.abbreviation]);
+    currencies.forEach(currency => currency.rate = data.rates[currency.abbreviation]);
+    populateAddCyrrencyList();
+    populateCurrenciesList();
+  })
+  .catch(err => console.log(err));
